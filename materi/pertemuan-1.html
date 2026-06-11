@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pertemuan 1 — Anatomi Game & Pengenalan GDD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="deck-prog" id="deckProg"></div>
+  <a class="home-btn" href="../index.html">&larr; Hub Materi</a>
+
+  <div class="deck" id="deck" data-hub="../index.html">
+
+    <section class="slide cover">
+      <div class="eyebrow">Pertemuan 1 / 12</div>
+      <h1>Anatomi Game &amp;<br>Pengenalan GDD</h1>
+      <div class="csub">Hari ini kita membedah cara kerja game sebelum membuatnya sendiri</div>
+      <p class="lead" style="margin-top:22px">Hari ini kita tidak bermain untuk menang — kita bermain untuk membongkar. Mulai sekarang kita semua adalah satu studio game indie, dan tugas pertama kita adalah membedah <span class="term">rules</span>, <span class="term">goals</span>, dan <span class="term">feedback loop</span> dari game yang sudah ada.</p>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Yang Kita Tuju Hari Ini</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.6rem)">Di akhir sesi, kalian akan bisa…</h2>
+      <div class="body-wrap"><div class="grid3">
+        <div class="card"><div class="num">01</div><h3>Membedah</h3><p>Kalian bisa menunjukkan mana <b style="color:var(--ink)">rules, goals,</b> dan <b style="color:var(--ink)">feedback loop</b> di sebuah game yang kita mainkan.</p></div>
+        <div class="card"><div class="num">02</div><h3>Mengobservasi</h3><p>Kalian main bukan untuk menang, tapi untuk mengamati <span class="en">cara kerja</span> mekaniknya — seperti seorang desainer.</p></div>
+        <div class="card"><div class="num">03</div><h3>Mengomunikasikan</h3><p>Kalian menulis laporan singkat hasil bedah anatomi, lalu menceritakannya ke kelompok lain.</p></div>
+      </div></div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Cara Kita Bekerja</div>
+      <div class="body-wrap">
+        <h2 style="font-size:clamp(1.8rem,4vw,3rem);max-width:18ch">"Kita pahami dulu anatomi game, sebelum menyentuh satu baris kode."</h2>
+        <p class="lead" style="margin-top:24px">Sebelum kita belajar Unity nanti di Fase 2, fundamental kita soal <span class="term">mekanik</span> dan <span class="term">player experience</span> harus matang dulu. Karena itu kita mulai dari yang paling sederhana — board game &amp; card game.</p>
+        <div class="grid2" style="margin-top:30px">
+          <div class="card"><h3 style="color:var(--accent)">Peran kalian</h3><p>Kalian sebuah studio game indie kecil (2–3 orang). Nanti kalian bergantian jadi developer dan jadi playtester untuk kelompok lain.</p></div>
+          <div class="card"><h3 style="color:var(--blue)">Peran saya</h3><p>Saya tidak akan mendikte langkah demi langkah. Anggap saya <span class="en">executive producer</span> studio yang berkeliling mengaudit, dan sering bertanya: "bagaimana ini memengaruhi <span class="term">game feel</span>?"</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Yang Akan Kita Bedah</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.6rem)">Tiga komponen yang kita cari di setiap game</h2>
+      <div class="body-wrap"><div class="grid3" style="margin-top:10px">
+        <div class="card" style="border-color:var(--blue)"><h3 style="color:var(--blue)">Rules / Aturan</h3><p>Batasan yang menentukan apa yang <b style="color:var(--ink)">boleh</b> dan <b style="color:var(--ink)">tidak boleh</b> kalian lakukan. <br><i style="color:#6f7488">Contoh: di Uno, kartu +4 cuma boleh dipakai saat tak ada warna lain.</i></p></div>
+        <div class="card" style="border-color:var(--accent)"><h3 style="color:var(--accent)">Goals / Tujuan</h3><p>Kondisi menang atau kalah. Kemana sebenarnya arah permainan ini? <br><i style="color:#6f7488">Contoh: habiskan semua kartu di tangan kalian lebih dulu.</i></p></div>
+        <div class="card" style="border-color:var(--accent2)"><h3 style="color:var(--accent2)">Feedback Loop</h3><p>Bagaimana aksi kalian memicu reaksi yang memengaruhi keputusan berikutnya. <br><i style="color:#6f7488">Contoh: lawan kena +2, ia tertinggal, kalian unggul.</i></p></div>
+      </div>
+      <p class="lead" style="margin-top:26px">⚠️ Hati-hati jangan tertukar: <b style="color:var(--accent3)">tujuan permainan</b> ≠ <b style="color:var(--accent3)">aturan permainan</b>. Tujuan itu "kemana kita pergi", aturan itu "bagaimana caranya".</p></div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Konsep Kunci · Core Loop</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.6rem)">Core Loop: siklus aksi yang kita ulang terus</h2>
+      <p class="lead" style="margin-top:14px">Ini aktivitas dasar yang pemain lakukan berulang-ulang. Kalau loop-nya solid, game-nya terasa seru.</p>
+      <div class="body-wrap"><div class="loop">
+        <div class="node rule"><div class="lbl">Ambil Giliran</div><div class="desc">kalian melakukan aksi</div></div><span class="arrow">&rarr;</span>
+        <div class="node act"><div class="lbl">Buat Keputusan</div><div class="desc">pilih kartu / langkah</div></div><span class="arrow">&rarr;</span>
+        <div class="node fb"><div class="lbl">Lihat Hasil</div><div class="desc">feedback dari game</div></div><span class="arrow">&rarr;</span>
+        <div class="node"><div class="lbl">Cek Tujuan</div><div class="desc">sudah menang?</div></div>
+      </div>
+      <p class="lead" style="margin-top:30px;text-align:center;width:100%">&#8635; Kita ulang loop ini sampai <span class="term">goal</span> tercapai. Tugas kalian nanti: temukan loop ini di game yang kalian mainkan.</p></div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Bahan Bedah Kita</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.6rem)">Game yang akan kita mainkan</h2>
+      <div class="body-wrap"><div class="refgames">
+        <div class="ref"><div class="ico">&#127183;</div><div class="nm">Uno</div><div class="mc">Shedding · feedback loop kompetitif lewat kartu aksi</div></div>
+        <div class="ref"><div class="ico">&#9823;</div><div class="nm">Chess</div><div class="mc">Abstract strategy · tanpa keberuntungan, info penuh</div></div>
+        <div class="ref"><div class="ico">&#127806;</div><div class="nm">Catan</div><div class="mc">Resource mgmt · trading &amp; dadu probabilitas</div></div>
+        <div class="ref"><div class="ico">&#127968;</div><div class="nm">Monopoly</div><div class="mc">Roll-and-move · akumulasi aset &amp; sewa</div></div>
+      </div>
+      <p class="lead" style="margin-top:28px">Sambil bermain, terus tanyakan ke diri kalian: <b style="color:var(--ink)">Apa tujuannya? Aturan mana yang paling penting? Kapan kita merasa seru — kapan mulai bosan?</b></p></div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Rencana Kita</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.6rem)">Yang akan kita lakukan hari ini</h2>
+      <div class="body-wrap"><div class="steps">
+        <div class="step"><div class="dot">1</div><div class="txt"><b>Saya tunjukkan dulu</b> — saya bedah satu game referensi di depan, supaya kalian lihat caranya membongkar rules, goals &amp; feedback loop</div></div>
+        <div class="step"><div class="dot">2</div><div class="txt"><b>Sekarang giliran kalian main</b> — berkelompok, mainkan game-nya, tapi fokus mengamati cara kerjanya, bukan mengejar menang</div></div>
+        <div class="step"><div class="dot">3</div><div class="txt"><b>Kita tulis temuannya</b> — diskusikan bareng kelompok dan catat hasil bedah anatomi game yang kalian mainkan</div></div>
+        <div class="step"><div class="dot">4</div><div class="txt"><b>Kita bagikan ke kelas</b> — ceritakan temuan kalian secara santai; di sini saya bantu luruskan kalau ada yang keliru</div></div>
+      </div></div>
+    </section>
+
+    <section class="slide">
+      <div class="eyebrow">Lembar Kerja Kelompok</div>
+      <h2 style="font-size:clamp(1.6rem,3.5vw,2.6rem)">Laporan Bedah Anatomi Game</h2>
+      <p class="lead" style="margin-top:14px">Isi bersama kelompok kalian, sambil dan sesudah bermain.</p>
+      <div class="body-wrap"><div class="grid2" style="margin-top:6px">
+        <div class="card"><div class="num">A · IDENTITAS</div><h3>Nama game &amp; genre</h3><p>Game apa yang kalian mainkan? Masuk genre apa? Berapa jumlah pemain &amp; berapa lama satu ronde?</p></div>
+        <div class="card"><div class="num">B · GOALS</div><h3>Tujuan permainan</h3><p>Bagaimana cara menang? Apa kondisi kalahnya? Tulis dalam 1–2 kalimat saja.</p></div>
+        <div class="card"><div class="num">C · RULES</div><h3>3 aturan terpenting</h3><p>Menurut kalian, aturan mana yang paling memengaruhi jalannya permainan?</p></div>
+        <div class="card"><div class="num">D · FEEDBACK LOOP</div><h3>Momen seru vs bosan</h3><p>Kapan kalian paling menikmati permainan? Kapan terasa membosankan atau bikin frustrasi? Kenapa?</p></div>
+      </div></div>
+    </section>
+
+    <section class="slide cover">
+      <div class="eyebrow">Sebelum Kita Tutup</div>
+      <h2 style="font-size:clamp(1.8rem,4.5vw,3.2rem)">Cek dulu sebelum keluar kelas</h2>
+      <ul class="check">
+        <li><span class="box"></span> Kelompok kalian sudah memainkan minimal 1 game referensi</li>
+        <li><span class="box"></span> Laporan bedah anatomi (A&ndash;D) sudah terisi lengkap</li>
+        <li><span class="box"></span> Kalian sudah bisa membedakan <span class="term">tujuan</span> dan <span class="term">aturan</span></li>
+        <li><span class="box"></span> Temuan kalian sudah dibagikan ke kelas</li>
+      </ul>
+      <p class="lead" style="margin-top:30px"><span class="pill">PERTEMUAN BERIKUTNYA</span><br><br>Minggu depan kita lanjut ke <b style="color:var(--ink)">Komparasi Genre &amp; Mekanik</b> — kita tukar game antar kelompok, lalu menyusun matriks perbandingan <span class="en">apple-to-apple</span> bersama-sama.</p>
+    </section>
+
+  </div>
+
+  <div class="deck-hint">&larr; &rarr; / spasi navigasi · F fullscreen · Esc kembali</div>
+  <div class="deck-nav">
+    <span class="deck-counter" id="deckCounter">1 / 9</span>
+    <button id="deckPrev" aria-label="Slide sebelumnya">&lsaquo;</button>
+    <button id="deckNext" aria-label="Slide berikutnya">&rsaquo;</button>
+  </div>
+
+  <script src="../js/deck.js"></script>
+</body>
+</html>

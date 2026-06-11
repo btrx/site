@@ -1,0 +1,22 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Code Editor and IDE configs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# SASS/SCSS cache (if you use preprocessors)
+.sass-cache/
+*.css.map
+*.js.map
+
+# Optional: Local design assets or notes not meant for production
+*.psd
+*.ai
+notes.txt

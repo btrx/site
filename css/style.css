@@ -1,0 +1,109 @@
+/* ============================================================
+   Pengembangan Gim · Fase E — Shared Stylesheet
+   Dipakai oleh hub (index.html) dan semua halaman materi.
+   ============================================================ */
+:root{
+  --bg:#11131a; --panel:#191c26; --panel2:#1f2330;
+  --ink:#eef0f6; --muted:#9aa0b5; --line:#2b2f3d;
+  --accent:#ff5e4d; --accent2:#46e0a8; --accent3:#ffd23f; --blue:#5b8cff;
+  --disp:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);font-family:var(--body);min-height:100vh;
+  background-image:radial-gradient(circle at 12% 8%, rgba(91,140,255,.07), transparent 40%),
+                   radial-gradient(circle at 88% 92%, rgba(255,94,77,.08), transparent 42%);
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* ---------- HUB ---------- */
+.home-wrap{max-width:1180px;margin:0 auto;padding:clamp(40px,6vw,90px) clamp(22px,5vw,48px) 80px;animation:fade .4s ease}
+.topbar{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:26px}
+.topbar::before{content:"";width:34px;height:2px;background:var(--accent)}
+.home h1{font-family:var(--disp);font-weight:700;font-size:clamp(2.3rem,5.5vw,4rem);line-height:1.05;letter-spacing:-.02em;max-width:18ch}
+.home .sub{font-family:var(--disp);color:var(--accent3);font-size:clamp(1.05rem,2vw,1.5rem);font-weight:500;margin-top:10px}
+.home .intro{color:var(--muted);font-size:1.05rem;line-height:1.6;max-width:64ch;margin-top:22px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:7px}
+.ld{width:10px;height:10px;border-radius:50%}
+.ld.ready{background:var(--accent2)} .ld.soon{background:var(--line)}
+.phase-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin:46px 0 16px;display:flex;align-items:center;gap:12px}
+.phase-tag::after{content:"";flex:1;height:1px;background:var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.meet{
+  background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;
+  text-align:left;cursor:pointer;font:inherit;color:inherit;position:relative;overflow:hidden;
+  transition:.18s;display:flex;flex-direction:column;gap:10px;min-height:172px;text-decoration:none;
+}
+.meet::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--line);transition:.18s}
+.meet.ready::before{background:var(--accent)}
+.meet:hover{transform:translateY(-3px);border-color:var(--accent)}
+.meet.soon{cursor:default;opacity:.62}
+.meet.soon:hover{transform:none;border-color:var(--line)}
+.meet .pn{font-family:var(--mono);font-size:.78rem;color:var(--accent);font-weight:700}
+.meet.soon .pn{color:var(--muted)}
+.meet h3{font-family:var(--disp);font-weight:600;font-size:1.18rem;line-height:1.2}
+.meet p{color:var(--muted);font-size:.9rem;line-height:1.45;flex:1}
+.meet .status{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;align-self:flex-start;padding:4px 10px;border-radius:999px;border:1px solid var(--line)}
+.meet.ready .status{color:var(--accent2);border-color:rgba(70,224,168,.35);background:rgba(70,224,168,.1)}
+.meet.soon .status{color:var(--muted)}
+.home-foot{margin-top:60px;font-family:var(--mono);font-size:.72rem;color:var(--muted);border-top:1px solid var(--line);padding-top:22px;line-height:1.7}
+
+/* ---------- DECK (halaman materi) ---------- */
+.deck{height:100vh;width:100vw;position:fixed;inset:0;background:var(--bg)}
+.slide{position:absolute;inset:0;display:none;padding:clamp(28px,5vw,72px) clamp(28px,5vw,72px) 88px;flex-direction:column;animation:fade .45s ease}
+.slide.shown{display:flex}
+.slide.cover{justify-content:center}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--accent)}
+h2{font-family:var(--disp);font-weight:600;line-height:1.1;letter-spacing:-.01em}
+.slide h1{font-family:var(--disp);font-weight:700;line-height:1.04;letter-spacing:-.02em;font-size:clamp(2.4rem,6.5vw,5.2rem)}
+.lead{font-size:clamp(1rem,1.5vw,1.25rem);color:var(--muted);max-width:62ch;line-height:1.55}
+.slide .csub{font-size:clamp(1.05rem,2vw,1.5rem);color:var(--accent3);font-family:var(--disp);font-weight:500;margin-top:8px}
+.body-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px 24px;position:relative}
+.card .num{font-family:var(--mono);font-size:.8rem;color:var(--accent);font-weight:700}
+.card h3{font-family:var(--disp);font-weight:600;font-size:1.15rem;margin:8px 0 8px}
+.card p{color:var(--muted);font-size:.95rem;line-height:1.5}
+.term{color:var(--accent3);font-weight:600}
+.en{font-style:italic;color:var(--blue)}
+.loop{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:30px}
+.node{background:var(--panel);border:1.5px solid var(--line);border-radius:14px;padding:18px 22px;text-align:center;min-width:150px}
+.node .lbl{font-family:var(--disp);font-weight:600;font-size:1.05rem}
+.node .desc{font-size:.8rem;color:var(--muted);margin-top:4px}
+.arrow{font-family:var(--mono);color:var(--accent);font-size:1.5rem}
+.node.act{border-color:var(--accent)} .node.rule{border-color:var(--blue)} .node.fb{border-color:var(--accent2)}
+.steps{display:flex;flex-direction:column;gap:14px;margin-top:24px}
+.step{display:flex;gap:18px;align-items:flex-start}
+.step .dot{flex:none;width:40px;height:40px;border-radius:50%;background:var(--panel);border:1.5px solid var(--accent);display:grid;place-items:center;font-family:var(--mono);font-weight:700;color:var(--accent)}
+.step .txt{padding-top:7px;font-size:1.02rem;line-height:1.5}
+.step .txt b{color:var(--accent3)}
+.refgames{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.ref{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+.ref .ico{font-size:1.9rem} .ref .nm{font-family:var(--disp);font-weight:600;margin-top:6px}
+.ref .mc{font-size:.78rem;color:var(--muted);margin-top:6px;line-height:1.4}
+.check{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.check li{list-style:none;display:flex;gap:12px;align-items:center;font-size:1.05rem}
+.check .box{width:22px;height:22px;border:2px solid var(--accent2);border-radius:6px;flex:none}
+.pill{display:inline-block;font-family:var(--mono);font-size:.74rem;background:rgba(70,224,168,.12);color:var(--accent2);border:1px solid rgba(70,224,168,.3);padding:5px 12px;border-radius:999px;letter-spacing:.06em}
+
+/* deck chrome */
+.deck-prog{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:60;transition:width .35s}
+.deck-nav{position:fixed;bottom:22px;right:28px;display:flex;align-items:center;gap:14px;z-index:50}
+.deck-nav button{background:var(--panel);border:1px solid var(--line);color:var(--ink);width:42px;height:42px;border-radius:10px;cursor:pointer;font-size:1.1rem;transition:.15s}
+.deck-nav button:hover{border-color:var(--accent);color:var(--accent)}
+.deck-nav button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.deck-counter{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.home-btn{position:fixed;top:20px;left:28px;z-index:50;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;padding:9px 16px;border-radius:10px;cursor:pointer;transition:.15s;display:flex;align-items:center;gap:8px;text-decoration:none}
+.home-btn:hover{border-color:var(--accent);color:var(--accent)}
+.deck-hint{position:fixed;bottom:26px;left:28px;font-family:var(--mono);font-size:.72rem;color:var(--muted);z-index:50}
+
+@media(max-width:720px){
+  .grid2,.grid3,.refgames{grid-template-columns:1fr}
+  .loop{flex-direction:column}.arrow{transform:rotate(90deg)}
+  .deck-hint{display:none}
+}

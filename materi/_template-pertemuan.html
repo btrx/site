@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pertemuan N — Judul Materi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="deck-prog" id="deckProg"></div>
+  <a class="home-btn" href="../index.html">&larr; Hub Materi</a>
+
+  <div class="deck" id="deck" data-hub="../index.html">
+
+    <!-- SLIDE COVER -->
+    <section class="slide cover">
+      <div class="eyebrow">Pertemuan N / 12</div>
+      <h1>Judul<br>Materi</h1>
+      <div class="csub">Satu kalimat pengantar dari guru ke siswa</div>
+      <p class="lead" style="margin-top:22px">Paragraf pembuka...</p>
+    </section>
+
+    <!-- Tambahkan <section class="slide"> ... </section> sebanyak yang dibutuhkan.
+         Komponen siap pakai (lihat pertemuan-1.html untuk contoh nyata):
+         .grid2 / .grid3 + .card   → kartu konsep
+         .loop + .node             → diagram siklus / alur
+         .steps + .step            → langkah aktivitas bernomor
+         .refgames + .ref          → kartu referensi (4 kolom)
+         .check                    → checklist penutup
+         Kelas teks: .term (kuning), .en (biru miring), .pill (badge hijau) -->
+
+  </div>
+
+  <div class="deck-hint">&larr; &rarr; / spasi navigasi · F fullscreen · Esc kembali</div>
+  <div class="deck-nav">
+    <span class="deck-counter" id="deckCounter">1 / 1</span>
+    <button id="deckPrev" aria-label="Slide sebelumnya">&lsaquo;</button>
+    <button id="deckNext" aria-label="Slide berikutnya">&rsaquo;</button>
+  </div>
+
+  <script src="../js/deck.js"></script>
+</body>
+</html>
