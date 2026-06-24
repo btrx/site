@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pertemuan N — Judul Materi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pertemuan N — Judul Materi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <div class="deck-prog" id="deckProg"></div>
   <a class="home-btn" href="../index.html">&larr; Hub Materi</a>
+  <button class="pdf-btn" id="deckPdf" type="button" title="Unduh materi sebagai PDF">&#8595; Unduh PDF</button>
 
   <div class="deck" id="deck" data-hub="../index.html">
 
-    <!-- SLIDE COVER -->
+    <!-- 1 · Cover -->
     <section class="slide cover">
       <div class="eyebrow">Pertemuan N / 12</div>
       <h1>Judul<br>Materi</h1>
@@ -24,17 +25,29 @@
     </section>
 
     <!-- Tambahkan <section class="slide"> ... </section> sebanyak yang dibutuhkan.
-         Komponen siap pakai (lihat pertemuan-1.html untuk contoh nyata):
-         .grid2 / .grid3 + .card   → kartu konsep
-         .loop + .node             → diagram siklus / alur
-         .steps + .step            → langkah aktivitas bernomor
-         .refgames + .ref          → kartu referensi (4 kolom)
-         .check                    → checklist penutup
-         Kelas teks: .term (kuning), .en (biru miring), .pill (badge hijau) -->
+         Lihat pertemuan-1.html untuk contoh nyata setiap komponen.
+
+         Komponen (bungkus isi utama dengan <div class="body-wrap"> agar tengah):
+           .grid2 / .grid3 + .card   → kartu konsep
+           .loop + .node             → diagram siklus / alur (.node.rule/.act/.fb)
+           .steps + .step            → langkah aktivitas bernomor
+           .refgames + .ref          → kartu referensi (4 kolom)
+           .check                    → checklist penutup
+
+         Utilitas teks:
+           .term (kuning) · .en (biru miring) · .pill (badge hijau)
+           .t-ink / .t-accent / .t-accent2 / .t-accent3 / .t-blue → sorot warna teks
+           .eg → contoh/catatan kecil (abu-abu, biasanya pada <i>)
+
+         Utilitas heading & kartu:
+           .h2-quote → heading kutipan besar (max 18ch)
+           .h2-lg    → heading penutup ekstra besar
+           .b-blue / .b-accent / .b-accent2 → warna garis tepi kartu
+         (h2 biasa sudah berukuran default, tak perlu style inline.) -->
 
   </div>
 
-  <div class="deck-hint">&larr; &rarr; / spasi navigasi · F fullscreen · Esc kembali</div>
+  <div class="deck-hint">&larr; &rarr; / spasi navigasi · F fullscreen · P unduh PDF · Esc kembali</div>
   <div class="deck-nav">
     <span class="deck-counter" id="deckCounter">1 / 1</span>
     <button id="deckPrev" aria-label="Slide sebelumnya">&lsaquo;</button>

@@ -26,8 +26,10 @@
 
   const next = document.getElementById('deckNext');
   const prev = document.getElementById('deckPrev');
+  const pdf  = document.getElementById('deckPdf');
   if(next) next.onclick = () => show(idx + 1);
   if(prev) prev.onclick = () => show(idx - 1);
+  if(pdf)  pdf.onclick  = () => window.print();
 
   document.addEventListener('keydown', e => {
     if(e.key === 'ArrowRight' || e.key === ' '){ e.preventDefault(); show(idx + 1); }
@@ -37,6 +39,7 @@
       if(!document.fullscreenElement) document.documentElement.requestFullscreen();
       else document.exitFullscreen();
     }
+    else if(e.key === 'p' || e.key === 'P'){ e.preventDefault(); window.print(); }
   });
 
   show(0);
